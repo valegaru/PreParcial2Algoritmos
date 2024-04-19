@@ -30,7 +30,7 @@ class People extends HTMLElement {
 		this.render();
 	}
 
-	ConnectedCallback() {
+	connectedCallback() {
 		this.render();
 	}
 

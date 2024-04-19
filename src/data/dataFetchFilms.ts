@@ -1,9 +1,10 @@
-export async function getFilms() {
+export const getFilms = async () => {
 	try {
-		const data = await fetch('https://ghibliapi.vercel.app/films').then((res) => res.json());
-		console.log(data);
-		return data.results;
+		const dataFilms = await fetch('https://ghibliapi.vercel.app/films').then((res) => res.json());
+		console.log(dataFilms);
+		return dataFilms;
 	} catch (error) {
-		console.error('no funciona');
+		console.log('no funciona');
+		return error;
 	}
-}
+};
