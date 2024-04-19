@@ -1,19 +1,25 @@
-import "./components/indexPadre"
+import './components/indexPadre';
+import { AttributesFilm } from './components/Film/Film';
+import { AttributesPeople } from './components/People/People';
 
 class AppContainer extends HTMLElement {
-    constructor(){
-        super();
-        this.attachShadow({mode: "open"})
-    }
+	constructor() {
+		super();
+		this.attachShadow({ mode: 'open' });
+	}
 
-    connectedCallback() {
-        this.render()
-    }
+	connectedCallback() {
+		this.render();
+	}
 
-    render() {
-        const something = this.ownerDocument.createElement('div');
-        this.shadowRoot?.appendChild(something);
-    }
+	render() {
+		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = `
+<film></film>
+<people></people>
+`;
+		}
+	}
 }
 
-customElements.define('app-container', AppContainer)
+customElements.define('app-container', AppContainer);

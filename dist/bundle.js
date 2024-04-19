@@ -10,13 +10,33 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/components/Film/Film.ts":
+/*!*************************************!*\
+  !*** ./src/components/Film/Film.ts ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"AttributesFilm\": () => (/* binding */ AttributesFilm),\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar AttributesFilm;\n(function (AttributesFilm) {\n    AttributesFilm[\"btn_favorite\"] = \"btn_favorite\";\n    AttributesFilm[\"utitle\"] = \"utitle\";\n    AttributesFilm[\"original_title\"] = \"original_title\";\n    AttributesFilm[\"release_date\"] = \"release_date\";\n    AttributesFilm[\"description\"] = \"description\";\n    AttributesFilm[\"director\"] = \"director\";\n    AttributesFilm[\"btn_people\"] = \"btn_people\";\n})(AttributesFilm || (AttributesFilm = {}));\nclass Film extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: 'open' });\n    }\n    static get observedAttributes() {\n        const attrs = {\n            btn_favorite: null,\n            utitle: null,\n            original_title: null,\n            release_date: null,\n            description: null,\n            director: null,\n            btn_people: null,\n        };\n        return Object.keys(attrs);\n    }\n    attributeChangedCallback(propName, oldValue, newValue) {\n        switch (propName) {\n            default:\n                this[propName] = newValue;\n                break;\n        }\n        this.render();\n    }\n    ConnectedCallback() {\n        this.render();\n    }\n    render() {\n        if (this.shadowRoot) {\n            this.shadowRoot.innerHTML = `\r\n<h1>${this.utitle}</h1>\r\n<h2>${this.original_title}</h2>\r\n<b><p>${this.release_date}</p></b>\r\n<b><p>${this.director}</p></b>\r\n<p>${this.description}</p>\r\n<button>${this.btn_favorite || 'add to favorites'}</button>\r\n<button>${this.btn_people || 'show people'}</button>\r\n`;\n        }\n    }\n}\ncustomElements.define('film', Film);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Film);\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/components/Film/Film.ts?");
+
+/***/ }),
+
+/***/ "./src/components/People/People.ts":
+/*!*****************************************!*\
+  !*** ./src/components/People/People.ts ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"AttributesPeople\": () => (/* binding */ AttributesPeople),\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar AttributesPeople;\n(function (AttributesPeople) {\n    AttributesPeople[\"name\"] = \"name\";\n    AttributesPeople[\"gender\"] = \"gender\";\n})(AttributesPeople || (AttributesPeople = {}));\nclass People extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: 'open' });\n    }\n    static get observedAttributes() {\n        const attrs = {\n            name: null,\n            gender: null,\n        };\n        return Object.keys(attrs);\n    }\n    attributeChangedCallback(propName, oldValue, newValue) {\n        switch (propName) {\n            default:\n                this[propName] = newValue;\n                break;\n        }\n        this.render();\n    }\n    ConnectedCallback() {\n        this.render();\n    }\n    render() {\n        if (this.shadowRoot) {\n            this.shadowRoot.innerHTML = `\r\n<b><p>${this.name}</p></b>\r\n<p>${this.gender}</p>\r\n`;\n        }\n    }\n}\ncustomElements.define('people', People);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (People);\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/components/People/People.ts?");
+
+/***/ }),
+
 /***/ "./src/components/indexPadre.ts":
 /*!**************************************!*\
   !*** ./src/components/indexPadre.ts ***!
   \**************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/components/indexPadre.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Film\": () => (/* reexport safe */ _Film_Film__WEBPACK_IMPORTED_MODULE_0__[\"default\"]),\n/* harmony export */   \"People\": () => (/* reexport safe */ _People_People__WEBPACK_IMPORTED_MODULE_1__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _Film_Film__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Film/Film */ \"./src/components/Film/Film.ts\");\n/* harmony import */ var _People_People__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./People/People */ \"./src/components/People/People.ts\");\n\n\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/components/indexPadre.ts?");
 
 /***/ }),
 
@@ -26,7 +46,7 @@ eval("\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/components/indexPadre.
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_indexPadre__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/indexPadre */ \"./src/components/indexPadre.ts\");\n/* harmony import */ var _components_indexPadre__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_indexPadre__WEBPACK_IMPORTED_MODULE_0__);\n\nclass AppContainer extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: \"open\" });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    render() {\n        var _a;\n        const something = this.ownerDocument.createElement('div');\n        (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(something);\n    }\n}\ncustomElements.define('app-container', AppContainer);\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_indexPadre__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/indexPadre */ \"./src/components/indexPadre.ts\");\n\nclass AppContainer extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: 'open' });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    render() {\n        if (this.shadowRoot) {\n            this.shadowRoot.innerHTML = `\n<film></film>\n<people></people>\n`;\n        }\n    }\n}\ncustomElements.define('app-container', AppContainer);\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/index.ts?");
 
 /***/ })
 
@@ -57,18 +77,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
